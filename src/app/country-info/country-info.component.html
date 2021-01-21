@@ -1,0 +1,26 @@
+<div class="container-fluid col-6 bg-light rounded">
+    <h2 class="font-italic">Información</h2>
+    <select class="form-control" #select_value (change)="infoCountrySelect(select_value)" name="country_sel"
+        id="country_select">
+        <option [selected]="aux.id === country_code" *ngFor="let aux of select; index as i" value={{aux.id}}>
+            {{aux.name}}</option>
+    </select>
+    <div>
+        <h3>Capital del pais</h3>
+        <p>{{capital}}</p>
+    </div>
+    <hr />
+    <div>
+        <h3>Lenguajes que se habla en el pais</h3>
+        <div *ngFor="let aux of language; index as i">
+            <p>{{aux.nativeName}}</p>
+        </div>
+    </div>
+    <hr />
+    <div>
+        <h3>Monedas usadas en el pais</h3>
+        <div *ngFor="let aux of currency; index as i">
+            <p>{{aux.name}} ({{aux.symbol}})</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Provincia</th>
+      <th>Casos confirmados</th>
+      <th>Número de muertos</th>
+      <th>Número de recuperados</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let country of data; index as i">
+    <ng-container *ngIf="country.province !== 'Unknown'">
+      <td>{{country.province}}</td>
+      <td>{{country.confirmed}}</td>
+      <td>{{country.deaths}}</td>
+      <td>{{country.recovered}}</td>
+    </ng-container>
+  </tr>
+</table>
